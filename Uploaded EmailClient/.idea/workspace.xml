@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e6f0c55-1d65-40e4-ac7c-15d7c1333b27" name="Changes" comment="Upload commit">
+      <change afterPath="$PROJECT_DIR$/../EmailClient/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/Email.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/clientList.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/activation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.annotation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.ejb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.jms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.mail-1.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.mail.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.persistence.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.resource.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.servlet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.servlet.jsp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/lib/javax.transaction.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/obj.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/BirthdayList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/DeserializationObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/EmailClient.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/EmailSendable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/Email_Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/MyObjectOutputStream.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/Official.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/OfficialFriend.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/Personal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/Recipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/SendEmail$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/SendEmail.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/out/production/Email/EmailClient/SerializationObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/BirthdayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/DeserializationObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/EmailClient.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/EmailSendable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/Email_Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/MyObjectOutputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/Official.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/OfficialFriend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/Personal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/Recipient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/SendEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email/src/EmailClient/SerializationObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EmailClient.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EmailClient/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Email_Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/.idea/UploadingFile.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/Email_Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/Recipients.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/activation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/file.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/javax.mail.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/.idea/UploadingFile.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/AddToClients.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/BirthDayClientDetails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/BirthDayWishSender.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/BirthdayWishGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/ClientData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/CurrentDate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/CustomEmailGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/CustomEmailSender.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/DateChange.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/EmailContent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/EmailGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/EmailSendCheck.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/EmailSender.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/Email_Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/OfficeFriendRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/OfficialRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/PersonalRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/ReadFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/Recipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/Recipients.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/SaveObjects.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/SendEmailTLS$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/SendEmailTLS.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/ShowEmails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/TakeObjects.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/WhoHasBirthDays.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/WishRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/WriteFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/activation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/file.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadingFile/out/production/UploadingFile/javax.mail.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientList.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javax.mail.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/.idea/Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/AddToClients.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/BirthDayClientDetails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/BirthDayWishSender.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/BirthdayWishGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/ClientData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/CurrentDate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/CustomEmailGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/CustomEmailSender.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/DateChange.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/EmailContent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/EmailGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/EmailSendCheck.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/EmailSender.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/Email_Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/OfficeFriendRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/OfficialRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/PersonalRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/ReadFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/Recipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/SaveObjects.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/SendEmailTLS$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/SendEmailTLS.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/ShowEmails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/TakeObjects.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/WhoHasBirthDays.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/WishRecipient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/WriteFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/activation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/clientList.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/file.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/javax.mail.jar" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DM48iUYKJ4ylHWAEMmKfVoPNuU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/ENGINEERING/Program Construction/Practise/EmailClient/Uploaded EmailClient",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ENGINEERING\Program Construction\Project" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Email_Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Email_Client" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Email_Client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e6f0c55-1d65-40e4-ac7c-15d7c1333b27" name="Changes" comment="" />
+      <created>1660495461554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660495461554</updated>
+      <workItem from="1660495462806" duration="1852000" />
+      <workItem from="1660532456246" duration="605000" />
+      <workItem from="1660535132542" duration="471000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Upload" />
+    <MESSAGE value="Upload commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload commit" />
+  </component>
+</project>

@@ -1,0 +1,3388 @@
+Index: UploadingFile/.idea/UploadingFile.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/.idea/UploadingFile.iml b/UploadingFile/.idea/UploadingFile.iml
+new file mode 100644
+--- /dev/null	(date 1660480343123)
++++ b/UploadingFile/.idea/UploadingFile.iml	(date 1660480343123)
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/activation.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/javax.mail.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++  </component>
++</module>
+\ No newline at end of file
+Index: out/production/Project/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/Project/.idea/misc.xml b/out/production/Project/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1660495477760)
++++ b/out/production/Project/.idea/misc.xml	(date 1660495477760)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: out/production/Project/clientList.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/Project/clientList.txt b/out/production/Project/clientList.txt
+new file mode 100644
+--- /dev/null	(date 1660497034085)
++++ b/out/production/Project/clientList.txt	(date 1660497034085)
+@@ -0,0 +1,3 @@
++Personal: samith,sam,samithkarunathilake@gmail.com,2022/08/14
++Personal: samith,sam,ee,2022/08/15
++Personal: samith,sam,ee,2022/08/15
+Index: Email/src/EmailClient/EmailClient.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/EmailClient.iml b/Email/src/EmailClient/EmailClient.iml
+new file mode 100644
+--- /dev/null	(date 1658549714813)
++++ b/Email/src/EmailClient/EmailClient.iml	(date 1658549714813)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" packagePrefix="EmailClient" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: Email/src/EmailClient/Email_Client.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/Email_Client.java b/Email/src/EmailClient/Email_Client.java
+new file mode 100644
+--- /dev/null	(date 1659831432366)
++++ b/Email/src/EmailClient/Email_Client.java	(date 1659831432366)
+@@ -0,0 +1,181 @@
++package EmailClient;
++
++// your index number:200045U
++
++//import libraries
++
++import java.io.*;
++import java.time.LocalDateTime;
++import java.time.format.DateTimeFormatter;
++import java.util.ArrayList;
++import java.util.Scanner;
++
++public class Email_Client {
++
++    public static void main(String[] args) throws IOException, ClassNotFoundException {
++
++        Scanner scanner = new Scanner(System.in);
++        System.out.println("Enter option type: \n"
++                + "1 - Adding a new recipient\n"
++                + "2 - Sending an email\n"
++                + "3 - Printing out all the recipients who have birthdays\n"
++                + "4 - Printing out details of all the emails sent\n"
++                + "5 - Printing out the number of recipient objects in the application");
++
++        int option = scanner.nextInt();
++        //Taking current date by importing java library.
++        DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("YYYY/MM/dd");
++        LocalDateTime now = LocalDateTime.now();
++        boolean addNewRecipient=false;
++        switch (option) {
++            case 1:
++                System.out.println("Enter the recipient details: ");
++                scanner.nextLine();
++                String input1 = scanner.nextLine();
++                addNewRecipient=true;
++                //Create file if there is no file in the folder or appending clients list if there is the file in the folder.
++                //File newObj = new File("clientList.txt");
++                FileWriter file = new FileWriter("clientList.txt", true);
++                BufferedWriter bufferedFile = new BufferedWriter(file);
++                bufferedFile.write(input1);
++                bufferedFile.newLine();
++                //Close the file.
++                bufferedFile.close();
++                file.close();
++
++                // input format - Official: nimal,nimal@gmail.com,ceo
++                // Use a single input to get all the details of a recipient
++                // code to add a new recipient
++                // store details in clientList.txt file
++                // Hint: use methods for reading and writing files
++                break;
++            case 2:
++                System.out.println("Enter the email,subject and content using coma seperated: ");
++                scanner.nextLine();
++                String input2 = scanner.nextLine();
++                //Spliting the input
++                String[] array2 = input2.split(",");
++
++                //Sending the mail using email,subject and content given by the user.
++                SendEmail newMail = new SendEmail(currentDate.format(now), array2[0], array2[1], array2[2]);
++                newMail.sendMail();
++
++                //Serialization newMail objects
++                SerializationObject serObject=new SerializationObject("obj.ser",newMail);
++                serObject.serialization();
++
++                // input format - email, subject, content
++                // code to send an email
++                break;
++            case 3:
++                System.out.println("Enter the date [input format - yyyy/MM/dd (ex: 2018/09/17)]");
++                scanner.nextLine();
++                String input3 = scanner.nextLine();
++                //Taking the array list as recipients who have birthdays on the given date.
++                File myFile1=new File("obj.ser");
++                if (myFile1.exists()){
++                    BirthdayList List = new BirthdayList(input3.substring(5, 10));
++                    List.setArray();
++                    ArrayList<Recipient> objList = List.getBirthdayObj();
++                    for (Recipient recipient : objList) {
++                        //Printing out their names.
++                        System.out.println("Recipient Name: "+recipient.getName()+
++                                " Recipient Email Address: "+recipient.getEmailAddress()+
++                                " Birthday Date: "+input3);
++                    }
++                }
++
++                // input format - yyyy/MM/dd (ex: 2018/09/17)
++                // code to print recipients who have birthdays on the given date
++                break;
++            case 4:
++                System.out.println("Enter the date [input format - yyyy/MM/dd (ex: 2018/09/17)]");
++                scanner.nextLine();
++                String input4 = scanner.nextLine();
++                //Making array list for saving SendMail objects after deserializing objects from text file.
++                File myFile=new File("obj.ser");
++                if (myFile.exists()){
++                    DeserializationObject DeseObject=new DeserializationObject();
++                    DeseObject.setSendEmailObjects();
++                    ArrayList<SendEmail> sendEmailObjects = DeseObject.getSendEmailObjects();
++
++                    //Check whether there are mails that was sent on given date and printing the details of emails.
++                    for (SendEmail mails : sendEmailObjects) {
++                        if (input4.equals(mails.getDate())) {
++                            System.out.println("Date: "+mails.getDate()+
++                                    ", Email Address: "+mails.getEmail()+
++                                    ", Email Subject: "+mails.getSubject());
++                        }
++                    }
++                }
++
++
++                // input format - yyyy/MM/dd (ex: 2018/09/17)
++                // code to print the details of all the emails sent on the input date
++                break;
++            case 5:
++                System.out.println("Number of recipients objects in the application: ");
++                File txtFile=new File("clientList.txt");
++                if (txtFile.exists()){
++                    BirthdayList List1 = new BirthdayList(" ");
++                    List1.setArray();
++                    //Printing the number of recipient objects in the applicating using static attribute.
++                    System.out.println(Recipient.getNumberOfRecipients());
++                    // code to print the number of recipient objects in the application
++                }else{
++                    System.out.println(0);
++                }
++                break;
++        }
++
++        //Check whether that there are recipients who have birthday on current date.
++        File txtFile=new File("clientList.txt");
++        if (txtFile.exists()){
++            BirthdayList List = new BirthdayList(currentDate.format(now).substring(5, 10));
++            List.setArray();
++            ArrayList<Recipient> objList = List.getBirthdayObj();
++
++            boolean Loop=true;
++            File myFile=new File("obj.ser");
++            if (myFile.exists()){
++                DeserializationObject DeseObject=new DeserializationObject();
++                DeseObject.setSendEmailObjects();
++                ArrayList<SendEmail> sendEmailObjects = DeseObject.getSendEmailObjects();
++
++                for (SendEmail mails : sendEmailObjects) {
++                    if (currentDate.format(now).equals(mails.getDate())){
++                        Loop=false;
++                        break;
++                    }
++                }
++            }
++            if (Loop||addNewRecipient){
++                for (Recipient recipient : objList) {
++                    try {
++                        //Send mail to a personal recipient.
++                        EmailSendable personal = (Personal) recipient;
++                        personal.sendEmail(currentDate.format(now));
++                        System.out.println("Birthday wish was sent to the "+recipient.getName());
++
++                    } catch (Exception e) {
++                        //Sending mail to a office friend.
++                        EmailSendable officeFriend = (OfficialFriend) recipient;
++                        officeFriend.sendEmail(currentDate.format(now));
++                        System.out.println("Birthday wish was sent to the "+recipient.getName());
++                    }
++                }
++            }
++        }
++
++
++
++        // start email client
++        // code to create objects for each recipient in clientList.txt
++        // use necessary variables, methods and classes
++
++
++    }
++}
++
++// create more classes needed for the implementation (remove the public access
++// modifier from classes when you submit your code)
+\ No newline at end of file
+Index: Email/src/EmailClient/BirthdayList.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/BirthdayList.java b/Email/src/EmailClient/BirthdayList.java
+new file mode 100644
+--- /dev/null	(date 1658482034271)
++++ b/Email/src/EmailClient/BirthdayList.java	(date 1658482034271)
+@@ -0,0 +1,51 @@
++package EmailClient;
++
++import java.io.File;
++import java.io.FileNotFoundException;
++import java.util.ArrayList;
++import java.util.Scanner;
++
++public class BirthdayList {
++    private String date;
++    ArrayList<Recipient> birthdayObj = new ArrayList<Recipient>();
++
++    public BirthdayList(String date){
++        this.date = date;
++    }
++
++
++    public void setArray() throws FileNotFoundException {
++        File myObj = new File("clientList.txt");
++        Scanner myReader = new Scanner(myObj);
++
++        while (myReader.hasNextLine()) {
++            String data = myReader.nextLine();
++            String[] array = data.split(":");
++            String[] array2 = array[1].split(",");
++            if (array[0].equals("Official")) {
++                Official off = new Official(array2[0], array2[1], array2[2]);
++
++
++                //System.out.println(off.getName());
++            } else if (array[0].equals("Office_friend")) {
++                OfficialFriend offFri = new OfficialFriend(array2[0], array2[1], array2[3].substring(5,10), array2[2]);
++                if (offFri.getBirthDay().equals(date)){
++                    birthdayObj.add(offFri);
++                }
++
++
++
++                //System.out.println(offFri.getBirthDay());
++            } else {
++                Personal per = new Personal(array2[0], array2[2], array2[3].substring(5,10), array2[1]);
++                if (per.getBirthDay().equals(date)){
++                    birthdayObj.add(per);
++                }
++            }
++        }
++    }
++
++    public ArrayList<Recipient> getBirthdayObj() {
++        return birthdayObj;
++    }
++}
+Index: out/production/Project/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/Project/.idea/.gitignore b/out/production/Project/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1660495478011)
++++ b/out/production/Project/.idea/.gitignore	(date 1660495478011)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: Email/src/EmailClient/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/.idea/modules.xml b/Email/src/EmailClient/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1658549714943)
++++ b/Email/src/EmailClient/.idea/modules.xml	(date 1658549714943)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/EmailClient.iml" filepath="$PROJECT_DIR$/EmailClient.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: out/production/Project/.idea/Project.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/Project/.idea/Project.iml b/out/production/Project/.idea/Project.iml
+new file mode 100644
+--- /dev/null	(date 1660495549768)
++++ b/out/production/Project/.idea/Project.iml	(date 1660495549768)
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/activation.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/javax.mail.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++  </component>
++</module>
+\ No newline at end of file
+Index: out/production/Project/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/Project/.idea/modules.xml b/out/production/Project/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1660495477740)
++++ b/out/production/Project/.idea/modules.xml	(date 1660495477740)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/Project.iml" filepath="$PROJECT_DIR$/.idea/Project.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/src/EmailClient/EmailSendable.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/EmailSendable.java b/Email/src/EmailClient/EmailSendable.java
+new file mode 100644
+--- /dev/null	(date 1658481986470)
++++ b/Email/src/EmailClient/EmailSendable.java	(date 1658481986470)
+@@ -0,0 +1,8 @@
++package EmailClient;
++
++import java.io.FileNotFoundException;
++import java.io.IOException;
++
++public interface EmailSendable{
++    public void sendEmail(String date) throws IOException;
++}
+Index: Email/src/EmailClient/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/.idea/workspace.xml b/Email/src/EmailClient/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1659996241142)
++++ b/Email/src/EmailClient/.idea/workspace.xml	(date 1659996241142)
+@@ -0,0 +1,54 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="43411c94-b434-45aa-aae9-aabe5fa92ae7" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="CodeInsightWorkspaceSettings">
++    <option name="optimizeImportsOnTheFly" value="true" />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectId" id="2CKSHupiQAWb7bEdVWDZIAWE57P" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Aravinda's File/ACA Mine/Semester 2/CS1040-Program Construction/Email&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
++  }
++}</component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="43411c94-b434-45aa-aae9-aabe5fa92ae7" name="Changes" comment="" />
++      <created>1658549698597</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1658549698597</updated>
++      <workItem from="1658549699844" duration="15000" />
++      <workItem from="1658549771352" duration="13000" />
++      <workItem from="1659978675398" duration="1071000" />
++      <workItem from="1659995791436" duration="447000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/src/EmailClient/OfficialFriend.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/OfficialFriend.java b/Email/src/EmailClient/OfficialFriend.java
+new file mode 100644
+--- /dev/null	(date 1659640292551)
++++ b/Email/src/EmailClient/OfficialFriend.java	(date 1659640292551)
+@@ -0,0 +1,45 @@
++package EmailClient;
++
++import java.io.*;
++
++public class OfficialFriend extends Recipient implements EmailSendable {
++    private String birthDay;
++    private String position;
++
++    public OfficialFriend(String name, String emailAddress, String birthDay, String position) {
++        super(name, emailAddress);
++        this.birthDay = birthDay;
++        this.position = position;
++    }
++
++    public String getBirthDay() {
++        return birthDay;
++    }
++
++    public String getPosition() {
++        return position;
++    }
++
++    public void sendEmail(String date) throws IOException {
++        String subject="Birthday wishing";
++        String content="Wish you a Happy Birthday. \n\n Aravinda";
++        SendEmail newMail=new SendEmail(date,this.getEmailAddress(),subject,content);
++        newMail.sendMail();
++        try {
++            FileOutputStream fos = new FileOutputStream("obj.ser", true);
++            ObjectOutputStream oos = new ObjectOutputStream(fos);
++            oos.writeObject(newMail);
++            oos.close();
++            fos.close();
++        }
++
++
++
++        catch (Exception e) {
++            e.printStackTrace();
++        }
++
++
++    }
++}
++
+Index: Email/src/EmailClient/SerializationObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/SerializationObject.java b/Email/src/EmailClient/SerializationObject.java
+new file mode 100644
+--- /dev/null	(date 1659829643178)
++++ b/Email/src/EmailClient/SerializationObject.java	(date 1659829643178)
+@@ -0,0 +1,27 @@
++package EmailClient;
++
++import java.io.FileOutputStream;
++import java.io.ObjectOutputStream;
++
++public class SerializationObject {
++
++    String outputFile;
++    SendEmail mail;
++
++    public SerializationObject(String outputFile, SendEmail mail) {
++        this.outputFile = outputFile;
++        this.mail = mail;
++    }
++
++    public void serialization(){
++        try {
++            FileOutputStream fileOutputStream = new FileOutputStream(outputFile, true);
++            ObjectOutputStream oos = new ObjectOutputStream(fileOutputStream);
++            oos.writeObject(mail);
++            oos.close();
++            fileOutputStream.close();
++        }catch (Exception e) {
++            e.printStackTrace();
++        }
++    }
++}
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1660535133650)
++++ b/.idea/vcs.xml	(date 1660535133650)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/src/EmailClient/MyObjectOutputStream.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/MyObjectOutputStream.java b/Email/src/EmailClient/MyObjectOutputStream.java
+new file mode 100644
+--- /dev/null	(date 1659400147338)
++++ b/Email/src/EmailClient/MyObjectOutputStream.java	(date 1659400147338)
+@@ -0,0 +1,29 @@
++
++package EmailClient;
++
++import java.io.IOException;
++import java.io.ObjectOutputStream;
++import java.io.OutputStream;
++
++public class MyObjectOutputStream extends ObjectOutputStream {
++
++    MyObjectOutputStream() throws IOException
++    {
++
++        // Super keyword refers to parent class instance
++        super();
++    }
++
++    // Constructor of this class
++    // 1. Parameterized constructor
++    MyObjectOutputStream(OutputStream o) throws IOException
++    {
++        super(o);
++    }
++
++    // Method of this class
++    public void writeStreamHeader() throws IOException
++    {
++        return;
++    }
++}
+Index: Email/src/EmailClient/DeserializationObject.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/DeserializationObject.java b/Email/src/EmailClient/DeserializationObject.java
+new file mode 100644
+--- /dev/null	(date 1659804810363)
++++ b/Email/src/EmailClient/DeserializationObject.java	(date 1659804810363)
+@@ -0,0 +1,48 @@
++package EmailClient;
++
++
++import java.io.*;
++import java.util.ArrayList;
++
++
++public class DeserializationObject {
++
++        ArrayList<SendEmail> sendEmailObjects = new ArrayList<SendEmail>();
++
++        public void setSendEmailObjects() {
++            try {
++                FileInputStream fileInputStream = new FileInputStream("obj.ser");
++                ObjectInputStream inObj=null;
++                SendEmail mailObject;
++                do {
++                    try {
++                        try {
++                            inObj = new ObjectInputStream(fileInputStream);
++                            mailObject = (SendEmail) inObj.readObject();
++                            sendEmailObjects.add(mailObject);
++                        }catch(EOFException ef){break;}
++
++                    }
++                    catch(EOFException io){
++                        io.printStackTrace();
++                        break;
++                    }
++
++                } while (mailObject != null);
++                assert inObj != null;
++                inObj.close();
++                fileInputStream.close();
++            }
++            catch(IOException | ClassNotFoundException i){
++                System.out.println("Error occured.");
++                //sendEmailObjects.add(null);
++                i.printStackTrace();
++            }
++        }
++
++        public ArrayList<SendEmail> getSendEmailObjects() {
++            return sendEmailObjects;
++        }
++}
++
++
+Index: UploadingFile/out/production/UploadingFile/file.ser
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/out/production/UploadingFile/file.ser b/UploadingFile/out/production/UploadingFile/file.ser
+new file mode 100644
+--- /dev/null	(date 1660489896755)
++++ b/UploadingFile/out/production/UploadingFile/file.ser	(date 1660489896755)
+@@ -0,0 +1,7 @@
++�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt <Wish you a Happy Birthday and hugs and love on your birthdayt 
++2022/08/14t samithkarunathilake@gmail.comt azmuthkarunathilake@gmail.comt Dear samith,t 
++BirthDay Wish�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt not 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt Dear Chandima,t ado�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt theret 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt #Dear samithkarunathilake@gmail.com,t hello�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt theret 
++2022/08/14t samithkarunathilake@gmail.comt kavishkekarunathilake@gmail.compt hello�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt not 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt  t ado
+\ No newline at end of file
+Index: Email/out/production/Email/EmailClient/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/out/production/Email/EmailClient/.idea/misc.xml b/Email/out/production/Email/EmailClient/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1658549714975)
++++ b/Email/out/production/Email/EmailClient/.idea/misc.xml	(date 1658549714975)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/out/production/Email/EmailClient/EmailClient.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/out/production/Email/EmailClient/EmailClient.iml b/Email/out/production/Email/EmailClient/EmailClient.iml
+new file mode 100644
+--- /dev/null	(date 1658549714813)
++++ b/Email/out/production/Email/EmailClient/EmailClient.iml	(date 1658549714813)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" packagePrefix="EmailClient" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: ../EmailClient/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../EmailClient/.idea/vcs.xml b/../EmailClient/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1660533735522)
++++ b/../EmailClient/.idea/vcs.xml	(date 1660533735522)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/out/production/Email/EmailClient/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/out/production/Email/EmailClient/.idea/modules.xml b/Email/out/production/Email/EmailClient/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1658549714943)
++++ b/Email/out/production/Email/EmailClient/.idea/modules.xml	(date 1658549714943)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/EmailClient.iml" filepath="$PROJECT_DIR$/EmailClient.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: file.ser
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/file.ser b/file.ser
+new file mode 100644
+--- /dev/null	(date 1660495720382)
++++ b/file.ser	(date 1660495720382)
+@@ -0,0 +1,3 @@
++�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt <Wish you a Happy Birthday and hugs and love on your birthdayt 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt Dear samith,t 
++BirthDay Wish
+\ No newline at end of file
+Index: UploadingFile/out/production/UploadingFile/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/out/production/UploadingFile/.idea/misc.xml b/UploadingFile/out/production/UploadingFile/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1660479534744)
++++ b/UploadingFile/out/production/UploadingFile/.idea/misc.xml	(date 1660479534744)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: UploadingFile/out/production/UploadingFile/Recipients.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/out/production/UploadingFile/Recipients.txt b/UploadingFile/out/production/UploadingFile/Recipients.txt
+new file mode 100644
+--- /dev/null	(date 1660486301048)
++++ b/UploadingFile/out/production/UploadingFile/Recipients.txt	(date 1660486301048)
+@@ -0,0 +1,2 @@
++Personal: samith,azmuth,azmuthkarunathilake@gmail.com,2001/08/14
++Personal: samith,az,samithkarunathilake@gmail.com,2001/01/13
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1660532463945)
++++ b/.idea/.name	(date 1660532463945)
+@@ -0,0 +1,1 @@
++Email_Client.java
+\ No newline at end of file
+Index: Email/obj.ser
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/obj.ser b/Email/obj.ser
+new file mode 100644
+--- /dev/null	(date 1659853917483)
++++ b/Email/obj.ser	(date 1659853917483)
+@@ -0,0 +1,26 @@
++�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt &Wish you a Happy Birthday. 
++
++ Aravindat 
++2022/08/07t ara523257@gmail.comt Birthday wishing�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt Tesingt 
++2022/08/07t ishanadewmini@gmail.comt Testing email client�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt &Wish you a Happy Birthday. 
++
++ Aravindat 
++2022/08/07t ara523257@gmail.comt Birthday wishing�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt &Wish you a Happy Birthday. 
++
++ Aravindat 
++2022/08/07t ara523257@gmail.comt Birthday wishing�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt &Wish you a Happy Birthday. 
++
++ Aravindat 
++2022/08/07t ara523257@gmail.comt Birthday wishing�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt IWish you a Happy Birthday and hugs and love on your birthday. 
++
++ Aravindat 
++2022/08/07t ishanadewmini@gmail.comt Birthday wishing�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt &Wish you a Happy Birthday. 
++
++ Aravindat 
++2022/08/07t ara523257@gmail.comt Birthday wishing�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt IWish you a Happy Birthday and hugs and love on your birthday. 
++
++ Aravindat 
++2022/08/07t ishanadewmini@gmail.comt Birthday wishing�� sr EmailClient.SendEmail��å�*B� L contentt Ljava/lang/String;L dateq ~ L emailq ~ L subjectq ~ xpt IWish you a Happy Birthday and hugs and love on your birthday. 
++
++ Aravindat 
++2022/08/07t ishanadewmini@gmail.comt Birthday wishing
+\ No newline at end of file
+Index: clientList.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/clientList.txt b/clientList.txt
+new file mode 100644
+--- /dev/null	(date 1660497163945)
++++ b/clientList.txt	(date 1660497163945)
+@@ -0,0 +1,4 @@
++Personal: samith,sam,samithkarunathilake@gmail.com,2022/08/14
++Personal: samith,sam,ee,2022/08/15
++Personal: samith,sam,ee,2022/08/15
++Personal: samith,sam,samithkarunathilake@gmail.com,2022/08/15
+Index: Email/out/production/Email/EmailClient/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/out/production/Email/EmailClient/.idea/workspace.xml b/Email/out/production/Email/EmailClient/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1658549784283)
++++ b/Email/out/production/Email/EmailClient/.idea/workspace.xml	(date 1658549784283)
+@@ -0,0 +1,42 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ChangeListManager">
++    <list default="true" id="43411c94-b434-45aa-aae9-aabe5fa92ae7" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectId" id="2CKSHupiQAWb7bEdVWDZIAWE57P" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "C:/Aravinda's File/ACA Mine/Semester 2/CS1040-Program Construction/Email"
++  }
++}]]></component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="43411c94-b434-45aa-aae9-aabe5fa92ae7" name="Changes" comment="" />
++      <created>1658549698597</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1658549698597</updated>
++      <workItem from="1658549699844" duration="15000" />
++      <workItem from="1658549771352" duration="13000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1660495477760)
++++ b/.idea/misc.xml	(date 1660495477760)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: UploadingFile/out/production/UploadingFile/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/out/production/UploadingFile/.idea/.gitignore b/UploadingFile/out/production/UploadingFile/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1660479534885)
++++ b/UploadingFile/out/production/UploadingFile/.idea/.gitignore	(date 1660479534885)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1660495478011)
++++ b/.idea/.gitignore	(date 1660495478011)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: Email/Email.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/Email.iml b/Email/Email.iml
+new file mode 100644
+--- /dev/null	(date 1658482232448)
++++ b/Email/Email.iml	(date 1658482232448)
+@@ -0,0 +1,38 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/lib/activation.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/lib/javax.mail-1.6.0.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/lib/javax.mail.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/Project.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Project.iml b/.idea/Project.iml
+new file mode 100644
+--- /dev/null	(date 1660495549768)
++++ b/.idea/Project.iml	(date 1660495549768)
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/activation.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/javax.mail.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++  </component>
++</module>
+\ No newline at end of file
+Index: UploadingFile/out/production/UploadingFile/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/out/production/UploadingFile/.idea/modules.xml b/UploadingFile/out/production/UploadingFile/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1660479534744)
++++ b/UploadingFile/out/production/UploadingFile/.idea/modules.xml	(date 1660479534744)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/UploadingFile.iml" filepath="$PROJECT_DIR$/.idea/UploadingFile.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1660495477740)
++++ b/.idea/modules.xml	(date 1660495477740)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/Project.iml" filepath="$PROJECT_DIR$/.idea/Project.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/clientList.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/clientList.txt b/Email/clientList.txt
+new file mode 100644
+--- /dev/null	(date 1659853902767)
++++ b/Email/clientList.txt	(date 1659853902767)
+@@ -0,0 +1,3 @@
++Office_friend:Aravinda,ara523257@gmail.com,clerk,2000/08/07
++Personal:Ishana,ishana,ishanadewmini@gmail.com,2000/08/07
++Personal:Ishana,ish,ishanadewmini@gmail.com,2001/08/07
+Index: Email_Client.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email_Client.java b/Email_Client.java
+new file mode 100644
+--- /dev/null	(date 1660497052952)
++++ b/Email_Client.java	(date 1660497052952)
+@@ -0,0 +1,768 @@
++
++// 200296M Email Client
++
++
++import javax.mail.*;
++import javax.mail.internet.InternetAddress;
++import javax.mail.internet.MimeMessage;
++import java.io.*;
++import java.text.SimpleDateFormat;
++import java.util.*;
++
++public class Email_Client {
++
++    public static void main(String[] args) {
++
++
++        //    The above code is a simple console application that is used to send emails to the clients.
++        ReadFile.Do();
++        Boolean condition = true;
++
++        while(condition) {
++
++            var Handler1 = new BirthDayWishSender(new BirthdayWishGenerator());
++            Handler1.handle();
++
++
++            Scanner scanner = new Scanner(System.in);
++            System.out.println("Enter option type: \n"
++                    + "1 - Adding a new recipient\n"
++                    + "2 - Sending an email\n"
++                    + "3 - Printing out all the recipients who have birthdays\n"
++                    + "4 - Printing out details of all the emails sent\n"
++                    + "5 - Printing out the number of recipient objects in the application\n"
++                    + "-1 - To Exit");
++
++
++            int option = scanner.nextInt();
++
++            switch (option) {
++                case 1:
++//                    System.out.println("Type(Official,Office_friend,Personal): name,email,position");
++                    System.out.println("Use the Following Format");
++                    System.out.println("Official: name,email,position");
++                    System.out.println("Personal: name,nick-name,email,birthdate");
++                    System.out.println("Office_friend: name,email,position,birthDate");
++
++                    scanner.nextLine();
++                    String detail = scanner.nextLine();
++                    AddToClients.Do(detail);
++                    WriteFile.Do(detail);
++
++                    break;
++                case 2:
++                    System.out.println("input format - email, subject, content");
++                    scanner.nextLine();
++                    String emailContent = scanner.nextLine();
++                    var Handler = new CustomEmailSender(new CustomEmailGenerator(emailContent));
++                    Handler.handle();
++
++                    break;
++                case 3:
++                    // need to change
++                    System.out.println("ex: 2018/09/17");
++                    scanner.nextLine();
++                    String RecipientInputDate = scanner.nextLine();
++                    var obj = new BirthDayClientDetails();
++                    obj.get(RecipientInputDate);
++
++
++                    break;
++                case 4:
++                    System.out.println("ex: 2018/09/17");
++                    scanner.nextLine();
++                    String EmailInputDate = scanner.nextLine();
++                    ShowEmails.get(EmailInputDate);
++
++
++                    break;
++                case 5:
++                    System.out.println("No of Recipients: "+ClientData.getCount());
++
++
++                    break;
++                case -1:
++                    condition =false;
++                    scanner.close();
++                    break;
++                default:
++                    throw new IllegalStateException("Unexpected value: " + option);
++            }
++
++        }
++
++
++    }
++}
++
++// The above code is a simple implementation of the Factory Method Pattern.
++class OfficeFriendRecipient extends WishRecipient {
++
++    //kamal,kamal@gmail.com,clerk,2000/12/12
++    private String recipientType;
++    private String position;
++    public OfficeFriendRecipient(String[] recipientInput){
++
++        super(recipientInput[0],recipientInput[1],recipientInput[3]);
++        position = recipientInput[2];
++        recipientType = "Office_friend";
++        Save();
++    }
++
++
++    public String getPosition() {
++        return position;
++    }
++
++    @Override
++    public EmailContent sendBirthDayWish() {
++
++        var content = new EmailContent(emailAddress,
++                "Wish you a Happy Birthday",
++                "BirthDay Wish",
++                "Dear " + name + ',');
++        return content;
++    }
++
++    // What other should is decided by recipients
++    @Override
++    public void show() {
++        System.out.println("Name :"+name);
++        System.out.println("EmailAddress :"+emailAddress);
++        System.out.println("Position :"+position);
++        System.out.println("BirthDate :"+birthDate);
++    }
++}
++
++// The above code is creating a class called OfficialRecipient which is a subclass of Recipient.
++class OfficialRecipient extends Recipient{
++//    nimal,nimal@gmail.com,ceo
++
++    private final String recipientType;
++    private final String name;
++    private final String emailAddress;
++    private final String position;
++    public OfficialRecipient(String[] recipientInput) {
++
++        name = recipientInput[0];
++        emailAddress = recipientInput[1];
++        position = recipientInput[2];
++        recipientType = "Official";
++        Save();
++    }
++
++
++    @Override
++    public void show() {
++        System.out.println("Name :"+name);
++        System.out.println("EmailAddress :"+emailAddress);
++        System.out.println("Position :"+position);
++
++    }
++}
++
++
++
++// The above code is creating a class called PersonalRecipient which is a child class of WishRecipient.
++class PersonalRecipient extends WishRecipient {
++//    sunil,<nick-name>,sunil@gmail.com,2000/10/10
++
++    private final String recipientType;
++
++    private String nickName;
++
++    public PersonalRecipient(String[] dataList) {
++
++        super(dataList[0],
++                dataList[2],
++                dataList[3]);
++
++        nickName = dataList[1];
++        recipientType = "Personal";
++
++        Save();
++    }
++
++    public String getNickName() {
++        return nickName;
++    }
++
++    @Override
++    public EmailContent sendBirthDayWish() {
++
++        var content = new EmailContent(emailAddress,
++                "Wish you a Happy Birthday and hugs and love on your birthday",
++                "BirthDay Wish",
++                "Dear " + name + ',');
++        return content;
++    }
++
++    @Override
++    public void show() {
++        System.out.println("Name :"+name);
++        System.out.println("EmailAddress :"+emailAddress);
++        System.out.println("Nick Name :"+nickName);
++        System.out.println("BirthDate :"+birthDate);
++    }
++}
++
++// Creating an abstract class called Recipient.
++abstract class Recipient {
++
++    private String name;
++    private String emailAddress;
++
++    public String getName() {
++        return name;
++    }
++
++    public String getEmailAddress(){
++        return emailAddress;
++    }
++
++    protected void Save(){
++        ClientData.setClientData(this);
++    }
++
++    public abstract void show();
++}
++
++// The above code is serializing the object and saving it to a file.
++// Creating an abstract class called WishRecipient that extends the Recipient class.
++abstract class WishRecipient  extends Recipient{
++    protected String birthDate;
++    protected String emailAddress;
++    protected String name;
++
++    protected WishRecipient(String name,String emailAddress,String birthDate) {
++        this.birthDate = birthDate;
++        this.emailAddress = emailAddress;
++        this.name = name;
++    }
++
++    protected void Save(){
++        super.Save();
++        ClientData.setWishData(this);
++    }
++
++    public String getBirthDate() {
++        String neededDate =DateChange.removeYear(birthDate);
++        return neededDate;
++    }
++
++    public abstract EmailContent sendBirthDayWish();
++
++}
++
++// Serializing the object and saving it to a file.
++class SaveObjects
++{
++    public static void Do(EmailContent content)
++    {
++
++        String filename = "file.ser";
++
++        // Serialization
++        try
++        {
++            FileOutputStream file = new FileOutputStream(filename,true);
++            ObjectOutputStream out = new ObjectOutputStream(file);
++
++            out.writeObject(content);
++
++            out.close();
++            file.close();
++
++            System.out.println("Object has been serialized");
++
++        }
++
++        catch(IOException ex)
++        {
++            System.out.println("IOException is caught");
++        }
++    }
++}
++
++// Deserializing the objects from the file.ser file.
++class TakeObjects {
++    private static List<EmailContent> DeserializedEmailList = new ArrayList<EmailContent>();
++    public static List<EmailContent> deserialize() {
++
++        DeserializedEmailList = new ArrayList<EmailContent>();
++        String filename = "file.ser";
++        File myFile = new File(filename);
++        if(myFile.exists()){
++            try {
++                FileInputStream file = new FileInputStream(filename);
++
++                ObjectInputStream inObj = null;
++
++                while (true) {
++                    try {
++                        inObj = new ObjectInputStream(file);
++                        EmailContent obj = (EmailContent) inObj.readObject();
++                        DeserializedEmailList.add(obj);
++
++                    } catch (EOFException e) {
++                        break;
++                    }
++                }
++
++                inObj.close();
++                file.close();
++
++            } catch (FileNotFoundException e) {
++
++                System.out.println("No objects presents");
++
++                throw new RuntimeException(e);
++            } catch (IOException e) {
++                throw new RuntimeException(e);
++            } catch (ClassNotFoundException e) {
++                throw new RuntimeException(e);
++            }
++        }
++        return DeserializedEmailList;
++    }
++}
++
++
++class AddToClients {
++    public static void Do(String details) {
++        getRecipient(details);
++    }
++
++    // The above code is creating a new object of the class based on the input.
++    private static Recipient getRecipient(String details) {
++        List<String> TypeData = List.of(details.split(" "));
++        String RecipientType = TypeData.get(0);
++        String[] recipientInput = TypeData.get(1).split(",");
++
++        switch (RecipientType){
++
++            case "Office_friend:" :
++                return new OfficeFriendRecipient(recipientInput);
++            case "Personal:" :
++                return new PersonalRecipient(recipientInput);
++            case "Official:" :
++                return new OfficialRecipient(recipientInput);
++
++        }
++
++        return null;
++    }
++}
++
++
++// Reading a file and adding the contents to a list.
++class ReadFile {
++    private static String path_name = "clientList.txt";
++
++    public static void Do () {
++        File myFile = new File(path_name);
++        if(myFile.exists())
++
++        {
++            try {
++                Scanner myReader = new Scanner(myFile);
++
++                while (myReader.hasNextLine()) {
++                    String data = myReader.nextLine();
++                    AddToClients.Do(data);
++                }
++
++            } catch (FileNotFoundException e) {
++                System.out.println("An error occurred.");
++                e.printStackTrace();
++            }
++        }
++    }
++
++}
++
++class WriteFile {
++    // The above code is writing the clientDetails to a file called Recipients.txt.
++    public static void Do(String clientDetails) {
++        File file = new File("clientList.txt");
++        FileWriter fr = null;
++        try {
++            fr = new FileWriter(file, true);
++
++
++
++            fr.write(clientDetails);
++            fr.write('\n');
++
++            fr.close();
++
++        } catch (IOException e) {
++            throw new RuntimeException(e);
++        }
++
++    }
++}
++
++// A class that is used to store the data of the clients.
++class ClientData {
++    private static List<Recipient> ClientDataList =new ArrayList<>();
++    private static List<WishRecipient> WishDataList = new ArrayList<>();
++
++    public static List<Recipient>  getClientDataList() {
++        for(Recipient recep : ClientDataList){
++            recep.show();
++            System.out.println("\n");
++        }
++        return ClientDataList;
++    }
++
++    public static void setClientData(Recipient person) {
++        ClientDataList.add(person);
++    }
++
++    public static List<WishRecipient> getWishDataList() {
++        return WishDataList;
++    }
++    public static void setWishData(WishRecipient client){
++        WishDataList.add(client);
++    }
++
++    public static int getCount(){
++        return ClientDataList.size();
++    }
++
++}
++
++// The above code is a class that is used to create an email.
++class EmailContent  implements Serializable {
++
++    private String EmailDate;
++    private String EmailTo;
++    private String EmailFrom = "samithkarunathilake@gmail.com";
++    private String EmailBody;
++    private String Subject;
++    private String Greeting;
++
++
++    private static final long serialVersionUID = 1591991628746197140L;
++    public EmailContent(String emailTo, String emailBody, String subject) {
++        EmailTo = emailTo;
++        EmailBody = emailBody;
++        Subject = subject;
++        Greeting = "";
++        EmailDate = CurrentDate.getWithYear();
++    }
++    public EmailContent(String emailTo, String emailBody, String subject, String greeting) {
++        EmailTo = emailTo;
++        EmailBody = emailBody;
++        Subject = subject;
++        Greeting = greeting;
++        EmailDate = CurrentDate.getWithYear();
++    }
++
++    public String getGreeting() {
++        return Greeting;
++    }
++
++    public String getSubject() {
++        return Subject;
++    }
++
++    public String getEmailBody() {
++        return EmailBody;
++    }
++
++    public String getEmailFrom() {
++        return EmailFrom;
++    }
++
++    public String getEmailTo() {
++        return EmailTo;
++    }
++
++    public String getEmailDate() {
++        return EmailDate;
++    }
++
++    //    The above code is checking if the EmailTo, EmailBody, Subject, Greeting, and EmailDate are equal to the other EmailTo, EmailBody, Subject, Greeting, and EmailDate.
++    public boolean equals(EmailContent other){
++
++        if(!EmailTo.equals(other.EmailTo)) return false;
++        else if (!EmailBody.equals(other.EmailBody)) return false;
++        else if (!Subject.equals(other.Subject)) return false;
++        else if (!Greeting.equals(other.Greeting)) return false;
++        else if (!EmailDate.equals(other.EmailDate)) return false;
++        else return true;
++    }
++
++    // The above code is creating a class called Email. The class has four variables: EmailTo, EmailDate, Subject, and EmailBody. The class also has two methods: set() and show(). The set() method is used to set the values of the variables. The show() method is used to display the values of the variables.
++    public void show(){
++        System.out.println("Email To:"+EmailTo);
++        System.out.println("Current Date:"+EmailDate);
++        System.out.println("Subject :"+Subject);
++        System.out.println(Greeting);
++        System.out.println(EmailBody);
++    }
++
++
++}
++
++class SendEmailTLS {
++
++    public static void sendMail(EmailContent content) {
++
++
++        final String username = "samithkkaru@gmail.com";
++        final String password = "bcso zpcn juwt uauu";
++
++        Properties prop = new Properties();
++        prop.put("mail.smtp.host", "smtp.gmail.com");
++        prop.put("mail.smtp.port", "587");
++        prop.put("mail.smtp.auth", "true");
++        prop.put("mail.smtp.starttls.enable", "true"); //TLS
++
++        Session session = Session.getInstance(prop,
++                new javax.mail.Authenticator() {
++                    protected PasswordAuthentication getPasswordAuthentication() {
++                        return new PasswordAuthentication(username, password);
++                    }
++                });
++
++        try {
++
++            Message message = new MimeMessage(session);
++            message.setFrom(new InternetAddress(username));
++            message.setRecipients(
++                    Message.RecipientType.TO,
++                    InternetAddress.parse(content.getEmailTo())
++            );
++            message.setSubject(content.getSubject());
++            message.setText(content.getGreeting()+'\n'+content.getEmailBody());
++
++            Transport.send(message);
++
++            System.out.println("Email Sent Successfully");
++
++        } catch (MessagingException e) {
++            e.printStackTrace();
++        }
++    }
++
++}
++
++// The above code is a class that is used to show the emails that are sent on a particular date.
++class ShowEmails {
++    public static void get(String Date){
++        boolean isNoEmail =true;
++        List<EmailContent> sentEmails = TakeObjects.deserialize();
++        for(EmailContent email: sentEmails){
++            if(Date.equals(email.getEmailDate())) {
++                isNoEmail = true;
++                email.show();
++                System.out.println("\n");
++            }
++        }
++        if(isNoEmail){
++            System.out.println("There are no Emails");
++        }
++    }
++}
++
++// The above code is generating birthday wishes for the employees.
++class BirthdayWishGenerator extends EmailGenerator{
++
++    private List<EmailContent> emailList = new ArrayList<>();
++    private String inputDate;
++
++    public BirthdayWishGenerator(){
++        this.inputDate= CurrentDate.get();
++    }
++
++    public List<EmailContent> Do(){
++        List<WishRecipient> list =WhoHasBirthDays.find(inputDate);
++        for(WishRecipient wishRecepient :list){
++            emailList.add(wishRecepient.sendBirthDayWish());
++        }
++
++        return emailList;
++    }
++
++}
++
++
++//    The above code is sending birthday wishes to the employees.
++class BirthDayWishSender extends EmailSender{
++    private List<EmailContent> emailList;
++
++    public BirthDayWishSender(EmailGenerator EmailType) {
++        super(EmailType);
++        emailList = (List<EmailContent>) EmailType.Do();
++        emailList = EmailSendCheck.checked(emailList);
++    }
++    public void handle(){
++        handle(emailList);
++    }
++
++}
++
++// The above code is creating a custom email generator.
++class CustomEmailGenerator extends EmailGenerator{
++
++    private String content;
++    public CustomEmailGenerator(String content){
++        this.content = content;
++    }
++
++    public EmailContent Do(){
++        List<String> details = List.of(content.split(","));
++        String emailTo = details.get(0);
++        String subject = details.get(1);
++        String emailBody = details.get(2);
++
++        return new EmailContent( emailTo, emailBody, subject);
++    }
++}
++
++class CustomEmailSender extends EmailSender{
++
++    private  EmailContent email;
++
++    public CustomEmailSender(EmailGenerator EmailType) {
++        super(EmailType);
++        this.email =(EmailContent) EmailType.Do();
++    }
++
++    @Override
++    public void handle() {
++        super.handle(email);
++    }
++}
++
++
++// Creating an abstract class called EmailGenerator.
++abstract class EmailGenerator {
++
++    public Object Do(){
++        return null;
++    };
++
++
++}
++
++// An abstract class that is used to send emails.
++abstract class EmailSender {
++
++    private EmailGenerator EmailType;
++
++    public EmailSender(EmailGenerator EmailType){
++        this.EmailType = EmailType;
++    }
++
++    public abstract void handle();
++
++    protected void handle(EmailContent email){
++        SaveObjects.Do(email);
++        SendEmailTLS.sendMail(email);
++    }
++
++    protected void handle(List<EmailContent> list){
++        for(EmailContent email: list){
++            SaveObjects.Do(email);
++            SendEmailTLS.sendMail(email);
++        }
++    }
++
++
++}
++
++// A class that is used to get the birthday clients.
++class BirthDayClientDetails {
++    private List<WishRecipient> WishList ;
++
++    public void  get(String Date){
++        String NextDate = DateChange.removeYear(Date);
++        WishList = WhoHasBirthDays.find(NextDate);
++
++        for(WishRecipient wishRecipient: WishList){
++            wishRecipient.show();
++            System.out.println("\n");
++        }
++        if(WishList.size()==0){
++            System.out.println("There are no birthday clients");
++        }
++    }
++}
++
++// The above code is a class that is used to get the current date.
++class CurrentDate {
++
++    public static String get(){
++        Date date = new Date();
++        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd");
++        String str = formatter.format(date);
++
++        return str;
++    }
++
++    public static String getWithYear(){
++        Date date = new Date();
++        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
++        String str1 = formatter.format(date);
++
++        return str1;
++    }
++}
++
++class DateChange {
++    public static String removeYear(String yyMMdd){
++        List<String> stringList = List.of(yyMMdd.split("/"));
++        return stringList.get(1)+'/'+stringList.get(2);
++    }
++}
++
++
++// Checking if the email has been sent before.
++abstract class EmailSendCheck implements List<EmailContent> {
++
++    public EmailSendCheck(List<EmailContent> emailList) {
++    }
++
++    public static List<EmailContent> checked(List<EmailContent> PendingEmailList){
++        List<EmailContent> ReturnEmailList =new ArrayList<EmailContent>();
++        Boolean isSent;
++        var SentEmailList = TakeObjects.deserialize();
++        for(EmailContent pendingEmail: PendingEmailList){
++            isSent = false;
++            for(EmailContent sentEmail : SentEmailList ){
++                if(pendingEmail.equals(sentEmail)){
++                    isSent = true;
++                    break;
++                }
++            }
++            if (!isSent) {
++                ReturnEmailList.add(pendingEmail);
++            }
++        }
++        return ReturnEmailList;
++    }
++}
++
++// Finding the birthdays of the people who have birthdays on the given date.
++class WhoHasBirthDays {
++
++    private static List<WishRecipient> SortedList ;
++    public static List<WishRecipient>  find(String Date) {
++        SortedList = new ArrayList<>();
++        var wishRecipientList = ClientData.getWishDataList();
++
++        for (WishRecipient wishRecipient : wishRecipientList) {
++            String birthdate = wishRecipient.getBirthDate();
++            if (birthdate.equals(Date)) {
++                SortedList.add(wishRecipient);
++
++            }
++        }
++        return SortedList;
++    }
++}
++
+Index: Email/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/.idea/misc.xml b/Email/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1658481587981)
++++ b/Email/.idea/misc.xml	(date 1658481587981)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/.idea/.gitignore b/Email/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1658481595276)
++++ b/Email/.idea/.gitignore	(date 1658481595276)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: Email/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/.idea/modules.xml b/Email/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1658481587949)
++++ b/Email/.idea/modules.xml	(date 1658481587949)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/Email.iml" filepath="$PROJECT_DIR$/Email.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: UploadingFile/file.ser
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/file.ser b/UploadingFile/file.ser
+new file mode 100644
+--- /dev/null	(date 1660489896755)
++++ b/UploadingFile/file.ser	(date 1660489896755)
+@@ -0,0 +1,7 @@
++�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt <Wish you a Happy Birthday and hugs and love on your birthdayt 
++2022/08/14t samithkarunathilake@gmail.comt azmuthkarunathilake@gmail.comt Dear samith,t 
++BirthDay Wish�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt not 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt Dear Chandima,t ado�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt theret 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt #Dear samithkarunathilake@gmail.com,t hello�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt theret 
++2022/08/14t samithkarunathilake@gmail.comt kavishkekarunathilake@gmail.compt hello�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt not 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt  t ado
+\ No newline at end of file
+Index: UploadingFile/out/production/UploadingFile/.idea/UploadingFile.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/out/production/UploadingFile/.idea/UploadingFile.iml b/UploadingFile/out/production/UploadingFile/.idea/UploadingFile.iml
+new file mode 100644
+--- /dev/null	(date 1660480343123)
++++ b/UploadingFile/out/production/UploadingFile/.idea/UploadingFile.iml	(date 1660480343123)
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/activation.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library" exported="">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/javax.mail.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++  </component>
++</module>
+\ No newline at end of file
+Index: UploadingFile/.idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/.idea/.name b/UploadingFile/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1660494795208)
++++ b/UploadingFile/.idea/.name	(date 1660494795208)
+@@ -0,0 +1,1 @@
++Email_Client.java
+\ No newline at end of file
+Index: UploadingFile/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/.idea/misc.xml b/UploadingFile/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1660479534744)
++++ b/UploadingFile/.idea/misc.xml	(date 1660479534744)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: UploadingFile/Recipients.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/Recipients.txt b/UploadingFile/Recipients.txt
+new file mode 100644
+--- /dev/null	(date 1660486301048)
++++ b/UploadingFile/Recipients.txt	(date 1660486301048)
+@@ -0,0 +1,2 @@
++Personal: samith,azmuth,azmuthkarunathilake@gmail.com,2001/08/14
++Personal: samith,az,samithkarunathilake@gmail.com,2001/01/13
+Index: UploadingFile/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/.idea/.gitignore b/UploadingFile/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1660479534885)
++++ b/UploadingFile/.idea/.gitignore	(date 1660479534885)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: UploadingFile/Email_Client.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/Email_Client.java b/UploadingFile/Email_Client.java
+new file mode 100644
+--- /dev/null	(date 1660495156598)
++++ b/UploadingFile/Email_Client.java	(date 1660495156598)
+@@ -0,0 +1,733 @@
++// 200296M Email Client
++
++
++import javax.mail.*;
++import javax.mail.internet.InternetAddress;
++import javax.mail.internet.MimeMessage;
++import java.io.*;
++import java.text.SimpleDateFormat;
++import java.util.*;
++
++public class Email_Client {
++
++    public static void main(String[] args) {
++
++
++        ReadFile.Do();
++        Boolean condition = true;
++
++        while(condition) {
++
++            var Handler1 = new BirthDayWishSender(new BirthdayWishGenerator());
++            Handler1.handle();
++
++
++            Scanner scanner = new Scanner(System.in);
++            System.out.println("Enter option type: \n"
++                    + "1 - Adding a new recipient\n"
++                    + "2 - Sending an email\n"
++                    + "3 - Printing out all the recipients who have birthdays\n"
++                    + "4 - Printing out details of all the emails sent\n"
++                    + "5 - Printing out the number of recipient objects in the application\n"
++                    + "-1 - To Exit");
++
++
++            int option = scanner.nextInt();
++
++            switch (option) {
++                case 1:
++//                    System.out.println("Type(Official,Office_friend,Personal): name,email,position");
++                    System.out.println("Use the Following Format");
++                    System.out.println("Official: name,email,position");
++                    System.out.println("Personal: name,nick-name,email,birthdate");
++                    System.out.println("Office_friend: name,email,position,birthDate");
++
++                    scanner.nextLine();
++                    String detail = scanner.nextLine();
++                    AddToClients.Do(detail);
++                    WriteFile.Do(detail);
++
++                    break;
++                case 2:
++                    System.out.println("input format - email, subject, content");
++                    scanner.nextLine();
++                    String emailContent = scanner.nextLine();
++                    var Handler = new CustomEmailSender(new CustomEmailGenerator(emailContent));
++                    Handler.handle();
++
++                    break;
++                case 3:
++                    // need to change
++                    System.out.println("input format: yyyy/mm/dd");
++                    scanner.nextLine();
++                    String RecipientInputDate = scanner.nextLine();
++                    var obj = new BirthDayClientDetails();
++                    obj.get(RecipientInputDate);
++
++
++                    break;
++                case 4:
++                    System.out.println("input format: yyyy/mm/dd");
++                    scanner.nextLine();
++                    String EmailInputDate = scanner.nextLine();
++                    ShowEmails.get(EmailInputDate);
++
++
++                    break;
++                case 5:
++                    System.out.println("No of Recipients: "+ClientData.getCount());
++
++
++                    break;
++                case -1:
++                    condition =false;
++                    break;
++                default:
++                    throw new IllegalStateException("Unexpected value: " + option);
++            }
++        }
++
++    }
++}
++class OfficeFriendRecipient extends WishRecipient {
++
++    //kamal,kamal@gmail.com,clerk,2000/12/12
++    private String recipientType;
++    private String position;
++    public OfficeFriendRecipient(String[] recipientInput){
++
++        super(recipientInput[0],recipientInput[1],recipientInput[3]);
++        position = recipientInput[2];
++        recipientType = "Office_friend";
++        Save();
++    }
++
++
++    public String getPosition() {
++        return position;
++    }
++
++    @Override
++    public EmailContent sendBirthDayWish() {
++
++        var content = new EmailContent(emailAddress,
++                "Wish you a Happy Birthday",
++                "BirthDay Wish",
++                "Dear " + name + ',');
++        return content;
++    }
++
++    @Override
++    public void show() {
++        System.out.println("Name :"+name);
++        System.out.println("EmailAddress :"+emailAddress);
++        System.out.println("Position :"+position);
++        System.out.println("BirthDate :"+birthDate);
++    }
++}
++
++class OfficialRecipient extends Recipient{
++//    nimal,nimal@gmail.com,ceo
++
++    private final String recipientType;
++    private final String name;
++    private final String emailAddress;
++    private final String position;
++    public OfficialRecipient(String[] recipientInput) {
++
++        name = recipientInput[0];
++        emailAddress = recipientInput[1];
++        position = recipientInput[2];
++        recipientType = "Official";
++        Save();
++    }
++
++
++    @Override
++    public void show() {
++        System.out.println("Name :"+name);
++        System.out.println("EmailAddress :"+emailAddress);
++        System.out.println("Position :"+position);
++
++    }
++}
++
++
++
++class PersonalRecipient extends WishRecipient {
++//    sunil,<nick-name>,sunil@gmail.com,2000/10/10
++
++    private final String recipientType;
++
++    private String nickName;
++
++    public PersonalRecipient(String[] dataList) {
++
++        super(dataList[0],
++                dataList[2],
++                dataList[3]);
++
++        nickName = dataList[1];
++        recipientType = "Personal";
++
++        Save();
++    }
++
++    public String getNickName() {
++        return nickName;
++    }
++
++    @Override
++    public EmailContent sendBirthDayWish() {
++
++        var content = new EmailContent(emailAddress,
++                "Wish you a Happy Birthday and hugs and love on your birthday",
++                "BirthDay Wish",
++                "Dear " + name + ',');
++        return content;
++    }
++
++    @Override
++    public void show() {
++        System.out.println("Name :"+name);
++        System.out.println("EmailAddress :"+emailAddress);
++        System.out.println("Nick Name :"+nickName);
++        System.out.println("BirthDate :"+birthDate);
++    }
++}
++
++abstract class Recipient {
++
++    private String name;
++    private String emailAddress;
++
++    public String getName() {
++        return name;
++    }
++
++    public String getEmailAddress(){
++        return emailAddress;
++    }
++
++    protected void Save(){
++        ClientData.setClientData(this);
++    }
++
++    public abstract void show();
++}
++
++abstract class WishRecipient  extends Recipient{
++    protected String birthDate;
++    protected String emailAddress;
++    protected String name;
++
++    protected WishRecipient(String name,String emailAddress,String birthDate) {
++        this.birthDate = birthDate;
++        this.emailAddress = emailAddress;
++        this.name = name;
++    }
++
++    protected void Save(){
++        super.Save();
++        ClientData.setWishData(this);
++    }
++
++    public String getBirthDate() {
++        String neededDate =DateChange.removeYear(birthDate);
++        return neededDate;
++    }
++
++    public abstract EmailContent sendBirthDayWish();
++
++}
++
++class SaveObjects
++{
++    public static void Do(EmailContent content)
++    {
++
++        String filename = "file.ser";
++
++        // Serialization
++        try
++        {
++            FileOutputStream file = new FileOutputStream(filename,true);
++            ObjectOutputStream out = new ObjectOutputStream(file);
++
++            out.writeObject(content);
++
++            out.close();
++            file.close();
++
++            System.out.println("Object has been serialized");
++
++        }
++
++        catch(IOException ex)
++        {
++            System.out.println("IOException is caught");
++        }
++    }
++}
++
++class TakeObjects {
++    private static List<EmailContent> DeserializedEmailList = new ArrayList<EmailContent>();
++    public static List<EmailContent> deserialize() {
++
++        DeserializedEmailList = new ArrayList<EmailContent>();
++        String filename = "file.ser";
++        File myFile = new File(filename);
++        if(myFile.exists()){
++            try {
++                FileInputStream file = new FileInputStream(filename);
++
++                ObjectInputStream inObj = null;
++
++                while (true) {
++                    try {
++                        inObj = new ObjectInputStream(file);
++                        EmailContent obj = (EmailContent) inObj.readObject();
++                        DeserializedEmailList.add(obj);
++
++                    } catch (EOFException e) {
++                        break;
++                    }
++                }
++
++                inObj.close();
++                file.close();
++
++            } catch (FileNotFoundException e) {
++
++                System.out.println("No objects presents");
++//                DeserializedEmailList = new ArrayList<>();
++                throw new RuntimeException(e);
++            } catch (IOException e) {
++                throw new RuntimeException(e);
++            } catch (ClassNotFoundException e) {
++                throw new RuntimeException(e);
++            }
++        }
++        return DeserializedEmailList;
++    }
++}
++
++class AddToClients {
++    public static void Do(String details) {
++        getRecipient(details);
++    }
++
++    private static Recipient getRecipient(String details) {
++        List<String> TypeData = List.of(details.split(" "));
++        String RecipientType = TypeData.get(0);
++        String[] recipientInput = TypeData.get(1).split(",");
++
++        switch (RecipientType){
++
++            case "Office_friend:" :
++                return new OfficeFriendRecipient(recipientInput);
++            case "Personal:" :
++                return new PersonalRecipient(recipientInput);
++            case "Official:" :
++                return new OfficialRecipient(recipientInput);
++
++        }
++
++        return null;
++    }
++}
++
++
++class ReadFile {
++    private static String path_name = "Recipients.txt";
++
++    public static void Do () {
++        File myFile = new File(path_name);
++        if(myFile.exists())
++
++        {
++            try {
++                Scanner myReader = new Scanner(myFile);
++
++                while (myReader.hasNextLine()) {
++                    String data = myReader.nextLine();
++                    AddToClients.Do(data);
++                }
++
++            } catch (FileNotFoundException e) {
++                System.out.println("An error occurred.");
++                e.printStackTrace();
++            }
++        }
++    }
++
++}
++
++class WriteFile {
++    public static void Do(String clientDetails) {
++        File file = new File("Recipients.txt");
++        FileWriter fr = null;
++        try {
++            fr = new FileWriter(file, true);
++
++
++
++            fr.write(clientDetails);
++            fr.write('\n');
++
++            fr.close();
++
++        } catch (IOException e) {
++            throw new RuntimeException(e);
++        }
++
++    }
++}
++
++class ClientData {
++    private static List<Recipient> ClientDataList =new ArrayList<>();
++    private static List<WishRecipient> WishDataList = new ArrayList<>();
++
++    public static List<Recipient>  getClientDataList() {
++        for(Recipient recep : ClientDataList){
++            recep.show();
++            System.out.println("\n");
++        }
++        return ClientDataList;
++    }
++
++    public static void setClientData(Recipient person) {
++        ClientDataList.add(person);
++    }
++
++    public static List<WishRecipient> getWishDataList() {
++        return WishDataList;
++    }
++    public static void setWishData(WishRecipient client){
++        WishDataList.add(client);
++    }
++
++    public static int getCount(){
++        return ClientDataList.size();
++    }
++
++}
++
++class EmailContent  implements Serializable {
++
++    private String EmailDate;
++    private String EmailTo;
++    private String EmailFrom = "samithkarunathilake@gmail.com";
++    private String EmailBody;
++    private String Subject;
++    private String Greeting;
++
++
++    private static final long serialVersionUID = 1591991628746197140L;
++    public EmailContent(String emailTo, String emailBody, String subject) {
++        EmailTo = emailTo;
++        EmailBody = emailBody;
++        Subject = subject;
++        Greeting = "";
++        EmailDate = CurrentDate.getWithYear();
++    }
++    public EmailContent(String emailTo, String emailBody, String subject, String greeting) {
++        EmailTo = emailTo;
++        EmailBody = emailBody;
++        Subject = subject;
++        Greeting = greeting;
++        EmailDate = CurrentDate.getWithYear();
++    }
++
++    public String getGreeting() {
++        return Greeting;
++    }
++
++    public String getSubject() {
++        return Subject;
++    }
++
++    public String getEmailBody() {
++        return EmailBody;
++    }
++
++    public String getEmailFrom() {
++        return EmailFrom;
++    }
++
++    public String getEmailTo() {
++        return EmailTo;
++    }
++
++    public String getEmailDate() {
++        return EmailDate;
++    }
++    public boolean equals(EmailContent other){
++
++        if(!EmailTo.equals(other.EmailTo)) return false;
++        else if (!EmailBody.equals(other.EmailBody)) return false;
++        else if (!Subject.equals(other.Subject)) return false;
++        else if (!Greeting.equals(other.Greeting)) return false;
++        else if (!EmailDate.equals(other.EmailDate)) return false;
++        else return true;
++    }
++
++    public void show(){
++        System.out.println("Email To:"+EmailTo);
++        System.out.println("Current Date:"+EmailDate);
++        System.out.println("Subject :"+Subject);
++        System.out.println(Greeting);
++        System.out.println(EmailBody);
++    }
++
++
++}
++
++class SendEmailTLS {
++
++    public static void sendMail(EmailContent content) {
++
++
++        final String username = "samithkkaru@gmail.com";
++        final String password = "bcso zpcn juwt uauu";
++
++        Properties prop = new Properties();
++        prop.put("mail.smtp.host", "smtp.gmail.com");
++        prop.put("mail.smtp.port", "587");
++        prop.put("mail.smtp.auth", "true");
++        prop.put("mail.smtp.starttls.enable", "true"); //TLS
++
++        Session session = Session.getInstance(prop,
++                new javax.mail.Authenticator() {
++                    protected PasswordAuthentication getPasswordAuthentication() {
++                        return new PasswordAuthentication(username, password);
++                    }
++                });
++
++        try {
++
++            Message message = new MimeMessage(session);
++            message.setFrom(new InternetAddress(username));
++            message.setRecipients(
++                    Message.RecipientType.TO,
++                    InternetAddress.parse(content.getEmailTo())
++            );
++            message.setSubject(content.getSubject());
++            message.setText(content.getGreeting()+'\n'+content.getEmailBody());
++
++            Transport.send(message);
++
++            System.out.println("Email Sent Successfully");
++
++        } catch (MessagingException e) {
++            e.printStackTrace();
++        }
++    }
++
++}
++
++class ShowEmails {
++    public static void get(String Date){
++        boolean isNoEmail =true;
++        List<EmailContent> sentEmails = TakeObjects.deserialize();
++        for(EmailContent email: sentEmails){
++            if(Date.equals(email.getEmailDate())) {
++                isNoEmail = true;
++                email.show();
++                System.out.println("\n");
++            }
++        }
++        if(isNoEmail){
++            System.out.println("There are no Emails");
++        }
++    }
++}
++
++class BirthdayWishGenerator extends EmailGenerator{
++
++    private List<EmailContent> emailList = new ArrayList<>();
++    private String inputDate;
++
++    public BirthdayWishGenerator(){
++        this.inputDate= CurrentDate.get();
++    }
++
++    public List<EmailContent> Do(){
++        List<WishRecipient> list =WhoHasBirthDays.find(inputDate);
++        for(WishRecipient wishRecepient :list){
++            emailList.add(wishRecepient.sendBirthDayWish());
++        }
++
++        return emailList;
++    }
++
++}
++
++class BirthDayWishSender extends EmailSender{
++    private List<EmailContent> emailList;
++
++    public BirthDayWishSender(EmailGenerator EmailType) {
++        super(EmailType);
++        emailList = (List<EmailContent>) EmailType.Do();
++        emailList = EmailSendCheck.checked(emailList);
++    }
++    public void handle(){
++        handle(emailList);
++    }
++
++}
++
++class CustomEmailGenerator extends EmailGenerator{
++
++    private String content;
++    public CustomEmailGenerator(String content){
++        this.content = content;
++    }
++
++    public EmailContent Do(){
++        List<String> details = List.of(content.split(","));
++        String emailTo = details.get(0);
++        String subject = details.get(1);
++        String emailBody = details.get(2);
++
++        return new EmailContent( emailTo, emailBody, subject);
++    }
++}
++
++class CustomEmailSender extends EmailSender{
++
++    private  EmailContent email;
++
++    public CustomEmailSender(EmailGenerator EmailType) {
++        super(EmailType);
++        this.email =(EmailContent) EmailType.Do();
++    }
++
++    @Override
++    public void handle() {
++        super.handle(email);
++    }
++}
++
++
++abstract class EmailGenerator {
++
++    public Object Do(){
++        return null;
++    };
++
++
++}
++
++abstract class EmailSender {
++
++    private EmailGenerator EmailType;
++
++    public EmailSender(EmailGenerator EmailType){
++        this.EmailType = EmailType;
++    }
++
++    public abstract void handle();
++
++    protected void handle(EmailContent email){
++        SaveObjects.Do(email);
++        SendEmailTLS.sendMail(email);
++    }
++
++    protected void handle(List<EmailContent> list){
++        for(EmailContent email: list){
++            SaveObjects.Do(email);
++            SendEmailTLS.sendMail(email);
++        }
++    }
++
++
++}
++
++class BirthDayClientDetails {
++    private List<WishRecipient> WishList ;
++
++    public void  get(String Date){
++        String NextDate = DateChange.removeYear(Date);
++        WishList = WhoHasBirthDays.find(NextDate);
++
++        for(WishRecipient wishRecipient: WishList){
++            wishRecipient.show();
++            System.out.println("\n");
++        }
++        if(WishList.size()==0){
++            System.out.println("There are no birthday clients");
++        }
++    }
++}
++
++class CurrentDate {
++
++    public static String get(){
++        Date date = new Date();
++        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd");
++        String str = formatter.format(date);
++
++        return str;
++    }
++
++    public static String getWithYear(){
++        Date date = new Date();
++        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
++        String str1 = formatter.format(date);
++
++        return str1;
++    }
++}
++
++class DateChange {
++    public static String removeYear(String yyMMdd){
++        List<String> stringList = List.of(yyMMdd.split("/"));
++        return stringList.get(1)+'/'+stringList.get(2);
++    }
++}
++
++
++abstract class EmailSendCheck implements List<EmailContent> {
++
++    public EmailSendCheck(List<EmailContent> emailList) {
++    }
++
++    public static List<EmailContent> checked(List<EmailContent> PendingEmailList){
++        List<EmailContent> ReturnEmailList =new ArrayList<EmailContent>();
++        Boolean isSent;
++        var SentEmailList = TakeObjects.deserialize();
++        for(EmailContent pendingEmail: PendingEmailList){
++            isSent = false;
++            for(EmailContent sentEmail : SentEmailList ){
++                if(pendingEmail.equals(sentEmail)){
++                    isSent = true;
++                    break;
++                }
++            }
++            if (!isSent) {
++                ReturnEmailList.add(pendingEmail);
++            }
++        }
++        return ReturnEmailList;
++    }
++}
++
++class WhoHasBirthDays {
++
++    private static List<WishRecipient> SortedList ;
++    public static List<WishRecipient>  find(String Date) {
++        SortedList = new ArrayList<>();
++        var wishRecipientList = ClientData.getWishDataList();
++
++        for (WishRecipient wishRecipient : wishRecipientList) {
++            String birthdate = wishRecipient.getBirthDate();
++            if (birthdate.equals(Date)) {
++                SortedList.add(wishRecipient);
++
++            }
++        }
++        return SortedList;
++    }
++}
++
+Index: EmailClient/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/EmailClient/.idea/workspace.xml b/EmailClient/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1660494647595)
++++ b/EmailClient/.idea/workspace.xml	(date 1660494647595)
+@@ -0,0 +1,247 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="6dc317c3-c80d-4749-ab02-4f9652432834" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Interface" />
++        <option value="Class" />
++      </list>
++    </option>
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectId" id="2Cbc33TeQUtTj2FdMprIF6yNpau" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/ENGINEERING/Program Construction/Practise/Project/EmailClient&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
++  }
++}</component>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\ENGINEERING\Program Construction\Practise\Project\EmailClient\src\AdditionalLibraries" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\ENGINEERING\Program Construction\Practise\Project\EmailClient\src\ObjectSerialization" />
++      <recent name="C:\ENGINEERING\Program Construction\Practise\Project\EmailClient\src" />
++    </key>
++  </component>
++  <component name="RunManager" selected="Application.Email_Client">
++    <configuration name="Email_Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Email_Client" />
++      <module name="EmailClient" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="FileHandling.ReadFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="FileHandling.ReadFile" />
++      <module name="EmailClient" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="EmailSend.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="SaveObjects" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="ObjectSerialization.SaveObjects" />
++      <module name="EmailClient" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="ObjectSerialization.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="ObjectSerialization.Test" />
++      <module name="EmailClient" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="ObjectSerialization.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="WriteFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="FileHandling.WriteFile" />
++      <module name="EmailClient" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="FileHandling.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="JetRunConfigurationType">
++      <module name="EmailClient" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <module name="EmailClient" />
++      <option name="filePath" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Email_Client" />
++        <item itemvalue="Application.SaveObjects" />
++        <item itemvalue="Application.Test" />
++        <item itemvalue="Application.WriteFile" />
++        <item itemvalue="Application.FileHandling.ReadFile" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="6dc317c3-c80d-4749-ab02-4f9652432834" name="Changes" comment="" />
++      <created>1659074524383</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1659074524383</updated>
++      <workItem from="1659074525544" duration="598000" />
++      <workItem from="1659142867619" duration="8762000" />
++      <workItem from="1659172582905" duration="12548000" />
++      <workItem from="1659199244609" duration="784000" />
++      <workItem from="1659225298285" duration="11756000" />
++      <workItem from="1659248907440" duration="8331000" />
++      <workItem from="1659352069408" duration="9603000" />
++      <workItem from="1659401552444" duration="5400000" />
++      <workItem from="1659427141436" duration="7075000" />
++      <workItem from="1659529055890" duration="5057000" />
++      <workItem from="1659934112562" duration="1935000" />
++      <workItem from="1659978588675" duration="8864000" />
++      <workItem from="1660187651881" duration="3000" />
++      <workItem from="1660262106226" duration="2032000" />
++      <workItem from="1660274556711" duration="32158000" />
++      <workItem from="1660362065406" duration="21319000" />
++      <workItem from="1660386968512" duration="8856000" />
++      <workItem from="1660420173318" duration="10370000" />
++      <workItem from="1660448697884" duration="5463000" />
++      <workItem from="1660463229959" duration="5244000" />
++      <workItem from="1660469426489" duration="7765000" />
++      <workItem from="1660477360679" duration="887000" />
++      <workItem from="1660478273384" duration="1979000" />
++      <workItem from="1660494599987" duration="48000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <breakpoint enabled="true" type="java-exception">
++          <properties class="java.io.FileNotFoundException" package="java.io" />
++          <option name="timeStamp" value="2" />
++        </breakpoint>
++        <breakpoint enabled="true" type="java-exception">
++          <properties class="java.lang.RuntimeException" package="java.lang" />
++          <option name="timeStamp" value="9" />
++        </breakpoint>
++        <breakpoint enabled="true" type="java-exception">
++          <properties class="java.util.InputMismatchException" package="java.util" />
++          <option name="timeStamp" value="13" />
++        </breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/EmailSend/ShowEmails.java</url>
++          <line>8</line>
++          <option name="timeStamp" value="49" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/FileHandling/AddToClients.java</url>
++          <line>17</line>
++          <option name="timeStamp" value="55" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/BirthDayFinder/EmailSendCheck.java</url>
++          <line>17</line>
++          <option name="timeStamp" value="59" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/ObjectSerialization/TakeObjects.java</url>
++          <line>27</line>
++          <option name="timeStamp" value="60" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/ObjectSerialization/TakeObjects.java</url>
++          <line>26</line>
++          <option name="timeStamp" value="61" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/ObjectSerialization/TakeObjects.java</url>
++          <line>25</line>
++          <option name="timeStamp" value="62" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/ObjectSerialization/TakeObjects.java</url>
++          <line>21</line>
++          <option name="timeStamp" value="63" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/ObjectSerialization/TakeObjects.java</url>
++          <line>19</line>
++          <option name="timeStamp" value="64" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/ObjectSerialization/TakeObjects.java</url>
++          <line>18</line>
++          <option name="timeStamp" value="65" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++  </component>
++  <component name="XSLT-Support.FileAssociations.UIState">
++    <expand />
++    <select />
++  </component>
++</project>
+\ No newline at end of file
+Index: UploadingFile/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UploadingFile/.idea/modules.xml b/UploadingFile/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1660479534744)
++++ b/UploadingFile/.idea/modules.xml	(date 1660479534744)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/UploadingFile.iml" filepath="$PROJECT_DIR$/.idea/UploadingFile.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: out/production/Project/file.ser
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/production/Project/file.ser b/out/production/Project/file.ser
+new file mode 100644
+--- /dev/null	(date 1660495720382)
++++ b/out/production/Project/file.ser	(date 1660495720382)
+@@ -0,0 +1,3 @@
++�� sr EmailContent���� L 	EmailBodyt Ljava/lang/String;L 	EmailDateq ~ L 	EmailFromq ~ L EmailToq ~ L Greetingq ~ L Subjectq ~ xpt <Wish you a Happy Birthday and hugs and love on your birthdayt 
++2022/08/14t samithkarunathilake@gmail.comt samithkarunathilake@gmail.comt Dear samith,t 
++BirthDay Wish
+\ No newline at end of file
+Index: Email/src/EmailClient/Personal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/Personal.java b/Email/src/EmailClient/Personal.java
+new file mode 100644
+--- /dev/null	(date 1659640292566)
++++ b/Email/src/EmailClient/Personal.java	(date 1659640292566)
+@@ -0,0 +1,47 @@
++package EmailClient;
++
++import java.io.*;
++
++public class Personal extends Recipient implements EmailSendable{
++    private String birthDay;
++    private String nickName;
++
++    public Personal(String name, String emailAddress, String birthDay, String nickName) {
++        super(name, emailAddress);
++        this.birthDay = birthDay;
++        this.nickName = nickName;
++    }
++
++    public String getBirthDay() {
++        return birthDay;
++    }
++
++    public String getNickName() {
++        return nickName;
++    }
++
++    public void sendEmail(String date) throws IOException {
++        String subject="Birthday wishing";
++        String content="Wish you a Happy Birthday and hugs and love on your birthday. \n\n Aravinda";
++        SendEmail newMail=new SendEmail(date,this.getEmailAddress(),subject,content);
++        newMail.sendMail();
++        try {
++
++
++            FileOutputStream fos = new FileOutputStream("obj.ser", true);
++            ObjectOutputStream oos = new ObjectOutputStream(fos);
++            oos.writeObject(newMail);
++            oos.close();
++            fos.close();
++        }
++
++
++
++        catch (Exception e) {
++            e.printStackTrace();
++        }
++
++
++    }
++}
++
+Index: Email/src/EmailClient/Official.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/Official.java b/Email/src/EmailClient/Official.java
+new file mode 100644
+--- /dev/null	(date 1658482478704)
++++ b/Email/src/EmailClient/Official.java	(date 1658482478704)
+@@ -0,0 +1,17 @@
++package EmailClient;
++
++import java.io.Serializable;
++
++public class Official extends Recipient {
++    private String position;
++
++    public Official(String name, String emailAddress, String position) {
++        super(name, emailAddress);
++        this.position = position;
++    }
++
++    public String getPosition() {
++        return position;
++    }
++}
++
+Index: Email/src/EmailClient/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/.idea/misc.xml b/Email/src/EmailClient/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1659980039409)
++++ b/Email/src/EmailClient/.idea/misc.xml	(date 1659980039409)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Email/src/EmailClient/Recipient.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/Recipient.java b/Email/src/EmailClient/Recipient.java
+new file mode 100644
+--- /dev/null	(date 1659802907021)
++++ b/Email/src/EmailClient/Recipient.java	(date 1659802907021)
+@@ -0,0 +1,31 @@
++package EmailClient;
++
++import java.io.Serializable;
++
++public class Recipient implements Serializable {
++    private static int numberOfRecipients=0;
++    private String name;
++    private final String emailAddress;
++
++    public Recipient(String name,String emailAddress) {
++        this.name=name;
++        this.emailAddress=emailAddress;
++        numberOfRecipients++;
++    }
++
++    public static int getNumberOfRecipients() {
++        return numberOfRecipients;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public String getEmailAddress() {
++        return emailAddress;
++    }
++
++    public static void setNumberOfRecipients(int numberOfRecipients) {
++        Recipient.numberOfRecipients = numberOfRecipients;
++    }
++}
+Index: Email/src/EmailClient/SendEmail.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Email/src/EmailClient/SendEmail.java b/Email/src/EmailClient/SendEmail.java
+new file mode 100644
+--- /dev/null	(date 1659830490428)
++++ b/Email/src/EmailClient/SendEmail.java	(date 1659830490428)
+@@ -0,0 +1,74 @@
++package EmailClient;
++
++import javax.mail.*;
++import javax.mail.internet.InternetAddress;
++import javax.mail.internet.MimeMessage;
++import java.io.Serializable;
++import java.util.Properties;
++
++public class SendEmail implements Serializable {
++
++    private static final long serialVersionUID=-8307237345658518819L;
++    private String date;
++    private String email;
++    private String subject;
++    private String content;
++
++    public SendEmail(String date, String email, String subject, String content) {
++        this.date = date;
++        this.email = email;
++        this.subject = subject;
++        this.content = content;
++    }
++
++    public void sendMail(){
++        final String username = "aravindahwk@gmail.com";
++        final String password = "zlck ihsk umbl zxmv";
++
++        Properties prop = new Properties();
++        prop.put("mail.smtp.host", "smtp.gmail.com");
++        prop.put("mail.smtp.port", "587");
++        prop.put("mail.smtp.auth", "true");
++        prop.put("mail.smtp.starttls.enable", "true"); //TLS
++
++        Session session = Session.getInstance(prop,
++                new javax.mail.Authenticator() {
++                    protected PasswordAuthentication getPasswordAuthentication() {
++                        return new PasswordAuthentication(username, password);
++                    }
++                });
++
++        try {
++
++            javax.mail.Message message = new MimeMessage(session);
++            message.setFrom(new InternetAddress("aravindahwk@gmail.com"));
++            message.setRecipients(
++                    Message.RecipientType.TO,
++                    InternetAddress.parse(email)
++            );
++            message.setSubject(subject);
++            message.setText(content);
++
++            Transport.send(message);
++
++        } catch (MessagingException e) {
++            e.printStackTrace();
++        }
++    }
++
++    public String getDate() {
++        return date;
++    }
++
++    public String getEmail() {
++        return email;
++    }
++
++    public String getSubject() {
++        return subject;
++    }
++
++    public String getContent() {
++        return content;
++    }
++}
+diff --git a/Email/src/EmailClient/.idea/.gitignore b/Email/src/EmailClient/.idea/.gitignore
+new file mode 100644
+diff --git a/Email/out/production/Email/EmailClient/.idea/.gitignore b/Email/out/production/Email/EmailClient/.idea/.gitignore
+new file mode 100644
