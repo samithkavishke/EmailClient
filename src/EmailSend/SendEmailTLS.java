@@ -13,8 +13,8 @@ public class SendEmailTLS {
     public static void sendMail(EmailContent content) {
 
 
-        final String username = "samithkkaru@gmail.com";
-        final String password = "bcso zpcn juwt uauu";
+        final String username = "youremail@gmail.com";
+        final String password = "your access token"; 
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
